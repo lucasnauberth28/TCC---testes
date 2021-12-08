@@ -1,6 +1,6 @@
 let calendar = document.querySelector('.calendar')
 
-const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const month_names = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
 
 isLeapYear = (year) => {
     return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 ===0)
@@ -84,12 +84,9 @@ document.querySelector('#next-year').onclick = () => {
     generateCalendar(curr_month.value, curr_year.value)
 }
 
-function Dark(){
-    const html = document.querySelector('html');
-    const checkbox = document.querySelector('#switch');
+let dark_mode_toggle = document.querySelector('.dark-mode-switch')
 
-    checkbox.addEventListener('change', function(){
-    html.classList.toggle('dark');
-});
-
-};
+dark_mode_toggle.onclick = () => {
+    document.querySelector('body').classList.toggle('light')
+    document.querySelector('body').classList.toggle('dark')
+}

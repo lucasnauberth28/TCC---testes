@@ -1,11 +1,17 @@
-:root{
-    --body: red;
-    --main: #fdfdfd;
-    --second: #c3c2c8;
-    --hover: #edf0f5;
-    --text: #151426;
+:root {
+    --dark-body: #4d4c5a;
+    --dark-main: #543BA6;
+    --dark-second: #F2A517;
+    --dark-hover: #323048;
+    --dark-text: #f8fbff;
 
-    --blue: #0000ff;
+    --light-body: #f3f8fe;
+    --light-main: #F2A517;
+    --light-second: #411E5A;
+    --light-hover: #edf0f5;
+    --light-text: #151426;
+
+    --blue: #411E5A;
     --white: #fff;
 
     --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -13,19 +19,20 @@
     --font-family: cursive;
 }
 
-.dark:root{
-    --body: green;
-    --main: #141529;
-    --second: #79788c;
-    --hover: #323048;
-    --text: #f8fbff;
+.dark {
+    --bg-body: var(--dark-body);
+    --bg-main: var(--dark-main);
+    --bg-second: var(--dark-second);
+    --color-hover: var(--dark-hover);
+    --color-txt: var(--dark-text);
+}
 
-    --blue: #0000ff;
-    --white: #fff;
-
-    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
-    --font-family: cursive;
+.light {
+    --bg-body: var(--light-body);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
+    --color-hover: var(--light-hover);
+    --color-txt: var(--light-text);
 }
 
 * {
@@ -43,7 +50,6 @@ body {
     background-color: var(--bg-body);
 }
 
-
 .calendar {
     height: max-content;
     width: max-content;
@@ -54,7 +60,6 @@ body {
     overflow: hidden;
     /* transform: scale(1.25); */
 }
-
 
 .light .calendar {
     box-shadow: var(--shadow);
@@ -115,14 +120,12 @@ body {
     transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 }
 
-
 .calendar-days div span:nth-child(1),
 .calendar-days div span:nth-child(3) {
     width: 2px;
     height: 0;
     background-color: var(--color-txt);
 }
-
 
 .calendar-days div:hover span:nth-child(1),
 .calendar-days div:hover span:nth-child(3) {
@@ -156,7 +159,6 @@ body {
     left: 0;
 }
 
-
 .calendar-days div span:nth-child(4) {
     bottom: 0;
     right: 0;
@@ -180,6 +182,7 @@ body {
     color: var(--white);
     border-radius: 50%;
 }
+
 
 .calendar-days div.curr-date span {
     display: none;
